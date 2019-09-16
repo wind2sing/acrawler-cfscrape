@@ -7,6 +7,7 @@ from yarl import URL
 from acrawler import ReScheduleImmediatelyError, get_logger
 from acrawler.handlers import ExpiredWatcher
 
+
 logger = get_logger("cfscrape")
 
 
