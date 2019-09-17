@@ -6,7 +6,7 @@ DESCRIPTION = "The handler working with aCrawler and Prometheus"
 URL = "https://github.com/wooddance/acrawler-cfscrape"
 EMAIL = "zireael.me@gmail.com"
 AUTHOR = "wooddance"
-VERSION = "0.0.2"
+VERSION = "0.0.3"
 REQUIRED = ["cfscrape", "acrawler"]
 
 
