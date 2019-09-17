@@ -26,6 +26,7 @@ class CfscrapeHandler(ExpiredWatcher):
         self.p = Path(
             self.crawler.config.get("CFS_COOKIES_FILE", Path.home() / ".cfscookies")
         )
+        self.proxies = self.crawler.config.get("CFS_PROXIES", None)
         self.url = URL(self.crawler.config.get("CFS_URL"))
         self.ua = self.crawler.config.get(
             "CFS_USERAGENT",
@@ -58,9 +59,9 @@ class CfscrapeHandler(ExpiredWatcher):
 
         tokens = None
         tokens, _ = cfscrape.get_tokens(
-            "http://www.javlibrary.com/cn/",
+            self.url,
             user_agent=self.ua,
-            # proxies=proxies,
+            proxies=self.proxies,
         )
         logger.warning(tokens)
         with self.p.open("w") as f:

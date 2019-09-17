@@ -21,5 +21,6 @@ class MyCrawler(Crawler):
     config = {
         "CFS_COOKIES_FILE": Path.home() / ".cfscookies",
         "CFS_URL": "http://www.example.com",
+        "CFS_PROXIES": None,
     }
 ```
