@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 acrawler = "*"
-cfscrape = "*"
+cloudscraper = "*"
 
 [requires]
 python_version = "3.6"

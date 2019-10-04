@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-import cfscrape
+import cloudscraper
 from yarl import URL
 
 from acrawler import ReScheduleImmediatelyError, get_logger
@@ -16,7 +16,7 @@ class CfscrapeHandler(ExpiredWatcher):
     """
 
     family = "Request"
-    priority = 100
+    priority = 500
     ttl = 20
 
     async def custom_on_start(self):
@@ -57,11 +57,8 @@ class CfscrapeHandler(ExpiredWatcher):
             dict: cookies
         """
 
-        tokens = None
-        tokens, _ = cfscrape.get_tokens(
-            self.url,
-            user_agent=self.ua,
-            proxies=self.proxies,
+        tokens, user_agent = cloudscraper.get_tokens(
+            self.url, headers={"User-Agent": self.ua}, proxies=self.proxies
         )
         logger.warning(tokens)
         with self.p.open("w") as f:

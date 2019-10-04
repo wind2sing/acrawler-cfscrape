@@ -1,6 +1,6 @@
 # acrawler-cfscrape
 
-The handler works with [aCrawler](https://github.com/wooddance/aCrawler) and [cloudflare-scrape](https://github.com/Anorov/cloudflare-scrape)
+The handler works with [aCrawler](https://github.com/wooddance/aCrawler) and [cloudscraper](https://github.com/VeNoMouS/cloudscraper)
 
 ## Installation
 
