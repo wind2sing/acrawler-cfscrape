@@ -2,12 +2,12 @@ from setuptools import setup
 
 
 NAME = "acrawler_cfscrape"
-DESCRIPTION = "The handler working with aCrawler and Prometheus"
+DESCRIPTION = "The handler working with aCrawler and cloudscraper"
 URL = "https://github.com/wooddance/acrawler-cfscrape"
 EMAIL = "zireael.me@gmail.com"
 AUTHOR = "wooddance"
-VERSION = "0.0.3"
-REQUIRED = ["cfscrape", "acrawler"]
+VERSION = "0.0.4"
+REQUIRED = ["cloudscraper", "acrawler"]
 
 
 setup(

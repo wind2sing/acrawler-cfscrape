@@ -1,2 +1,2 @@
 acrawler
-cfscrape
+cloudscraper
