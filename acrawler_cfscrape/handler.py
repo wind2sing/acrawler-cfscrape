@@ -41,14 +41,19 @@ class CfscrapeHandler(ExpiredWatcher):
             self.crawler.session.cookie_jar.update_cookies(tokens, self.url)
 
     async def custom_expired_worker(self):
-        tokens = self.get_tokens()
-        self.crawler.session.cookie_jar.update_cookies(tokens, self.url)
+        try:
+            tokens = self.get_tokens()
+            self.crawler.session.cookie_jar.update_cookies(tokens, self.url)
+            return True
+        except Exception as e:
+            logger.error(e)
+            return False
 
     async def handle_after(self, request):
         if request.url.host == self.url.host and request.response:
             if request.response.status == 503:
                 self.expired.set()
-                raise ReScheduleImmediatelyError(defer=2)
+                raise ReScheduleImmediatelyError(defer=5)
 
     def get_tokens(self) -> dict:
         """Call cfscrape
