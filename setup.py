@@ -6,7 +6,7 @@ DESCRIPTION = "The handler working with aCrawler and cloudscraper"
 URL = "https://github.com/wooddance/acrawler-cfscrape"
 EMAIL = "zireael.me@gmail.com"
 AUTHOR = "wooddance"
-VERSION = "0.0.4"
+VERSION = "0.0.5"
 REQUIRED = ["cloudscraper", "acrawler"]
 
 
